@@ -8,5 +8,6 @@ int main(int argc, char** argv) {
 	vector<BookModel> vec;
 	vec = fio.ReadFile();
 	cout << "vec.size()=" <<vec.size() <<endl;
+	cout << vec.at(0) <<endl;
 	return 0;
 }

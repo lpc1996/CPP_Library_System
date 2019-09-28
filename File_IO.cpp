@@ -6,7 +6,7 @@ File_IO::File_IO(){
 
 vector<BookModel> File_IO::ReadFile(){
 	vector<BookModel> bookVec;
-	file.open(BOOK);
+	file.open(BOOK);  
 	string line;
 	if(file.is_open()) {
 		while( !file.eof() ){
@@ -24,7 +24,7 @@ vector<BookModel> File_IO::ReadFile(){
 			file >> line;
 			book.setType(line);
 			file >> line;
-			double p ;
+			double p;
 			Util util;
 			p = util.toDouble(line);
 			cout << p <<endl;	
@@ -33,6 +33,7 @@ vector<BookModel> File_IO::ReadFile(){
 			int num = util.toInt(line); 
 			book.setNumber(num);
 			bookVec.push_back(book);
+			file.ignore(); 
 		}
 		file.close(); 
 	}else{
